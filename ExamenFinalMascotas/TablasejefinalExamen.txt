@@ -1,0 +1,56 @@
+create database tiendamascotas;
+use tiendamascotas;
+
+
+
+
+create table usuarios
+( id int(9) auto_increment,
+  nombre varchar(30),
+  apellidos varchar(40),
+  telefono varchar(12),
+  usuario varchar(6),
+  password varchar(128),
+  admin boolean,
+
+constraint pk_usuarios_id primary key (id))
+engine = innodb;
+
+
+create table mascotas
+( id int(9) auto_increment,
+  nombre varchar(20),
+  tipo varchar(20),
+  precio float(6,2),
+constraint pk_mascotas_id primary key (id)
+)engine = innodb;
+
+
+
+create table compradores
+(dni varchar(9),
+ nombre varchar(25),
+ apellidos varchar(30),
+ direccion varchar(30),
+ localidad varchar(20),
+ email varchar(30),
+ telefono varchar(12),
+constraint pk_compradores_dni primary key(dni)
+)engine = innodb;
+
+
+
+
+create table ventas
+(id int(32) auto_increment,
+ dni varchar(9),
+ fecha timestamp,
+ importe float(6,2),
+constraint pk_ventas_id primary key (id),
+constraint fk_ventas_comprador_dni foreign key (dni)
+ references compradores(dni) 
+)engine = innodb;
+
+
+
+insert into usuarios values(1,'Pedro','Perez Gonzalez','12345678901','admin','c7ad44cbad762a5da0a452f9e854fdc1e0e7a52a38015f23f3eab1d80b931dd472634dfac71cd34ebc35d16ab7fb8a90c81f975113d6c7538dc69dd8de9077ec',true);
