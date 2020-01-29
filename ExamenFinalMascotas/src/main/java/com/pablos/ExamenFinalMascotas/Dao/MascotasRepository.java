@@ -19,7 +19,7 @@ public interface MascotasRepository extends Repository<Mascotas,Integer> {
     List<Mascotas>findAll();
     Mascotas findById(int id);
     Mascotas save(Mascotas m);
-    void delete(Mascotas m);
+    Mascotas delete(Mascotas m);
     List<String> listarTipsoMascota();
     List<Mascotas>listarporTipoMascota(@Param("t") String t);
     List<Mascotas>listarMascotasOrdenado();

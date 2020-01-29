@@ -19,7 +19,8 @@ public interface MascotasService {
     List<Mascotas> listadoporTipoOrdenado(String t);
     Mascotas nuevaMascota(Mascotas m);
     Mascotas modificarMascota(Mascotas m);
-    void borrarMascota(Mascotas m);
+    Mascotas borrarMascota(Mascotas m);
+    List<String> listarTipsoMascota();
  
     
 }

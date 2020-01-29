@@ -35,8 +35,8 @@ private UsuariosRepository rep;
     }
 
     @Override
-    public void borrarUsuario(Usuarios u) {
-        rep.delete(u);
+    public Usuarios borrarUsuario(Usuarios u) {
+        return rep.delete(u);
     }
 
     @Override

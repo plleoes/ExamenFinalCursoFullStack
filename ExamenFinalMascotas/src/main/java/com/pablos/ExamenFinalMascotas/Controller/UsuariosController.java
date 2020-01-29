@@ -54,8 +54,8 @@ public Usuarios modificarUsuario(@RequestBody Usuarios u, @PathVariable("id") in
 }
 
 @DeleteMapping(path = "/borrarusuario/{id}")
-public void borrarUsuario(@PathVariable("id") int id){
-    ser.borrarUsuario(ser.listaunUsuario(id));
+public Usuarios borrarUsuario(@PathVariable("id") int id){
+    return ser.borrarUsuario(ser.listaunUsuario(id));
 }
 
 @GetMapping(path = "/entrar/{usu}/{pass}", produces = MediaType.APPLICATION_JSON_VALUE)

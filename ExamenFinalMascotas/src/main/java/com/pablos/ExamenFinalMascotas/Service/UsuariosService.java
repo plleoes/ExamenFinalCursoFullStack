@@ -19,7 +19,7 @@ public interface UsuariosService {
     
     Usuarios nuevoUsuario(Usuarios u);
     Usuarios modificarUsuario(Usuarios u);
-    void borrarUsuario(Usuarios u);
+    Usuarios borrarUsuario(Usuarios u);
     Usuarios comprobarPass(String usu,String pass);
     
 }

@@ -39,13 +39,18 @@ public class MascotasServiceImp implements MascotasService {
     }
 
     @Override
-    public void borrarMascota(Mascotas m) {
-        rep.delete(m);
+    public Mascotas borrarMascota(Mascotas m) {
+        return rep.delete(m);
     }
 
     @Override
     public Mascotas pedirMascota(int id) {
         return rep.findById(id);
+    }
+
+    @Override
+    public List<String> listarTipsoMascota() {
+        return rep.listarTipsoMascota();
     }
     
 }

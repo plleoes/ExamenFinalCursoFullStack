@@ -36,6 +36,11 @@ public List<Mascotas> listarMascotas(){
     return ser.listadoTodasOrdenado();
 }
 
+@GetMapping(path = "/listartiposmascotas", produces = MediaType.APPLICATION_JSON_VALUE)
+public List<String> listartiposMascotas(){
+    return ser.listarTipsoMascota();
+}
+
 @GetMapping(path = "/listarmascotas/{t}", produces = MediaType.APPLICATION_JSON_VALUE)
 public List<Mascotas> listarMascotasporTipo(@PathVariable("t") String t){
     return ser.listadoporTipoOrdenado(t);
@@ -58,8 +63,8 @@ public Mascotas modificarMascota(@RequestBody Mascotas u,@PathVariable("id") int
 }
 
 @DeleteMapping(path = "/borrarmascota/{id}", produces = MediaType.APPLICATION_JSON_VALUE)
-public void borrarMascota(@PathVariable("id") int id){
-    ser.borrarMascota(ser.pedirMascota(id));
+public Mascotas borrarMascota(@PathVariable("id") int id){
+    return ser.borrarMascota(ser.pedirMascota(id));
 }
 
     

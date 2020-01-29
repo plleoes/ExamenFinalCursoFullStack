@@ -19,7 +19,7 @@ public interface UsuariosRepository extends Repository<Usuarios,Integer> {
     List<Usuarios>findAll();
     Usuarios findById(int id);
     Usuarios save(Usuarios u);
-    void delete(Usuarios p);
+    Usuarios delete(Usuarios p);
     Usuarios compruebaUsuariopass(@Param("usu") String usu,@Param("pass") String pass);
     List<Usuarios> listadoUsuariosOrdenado();
      
